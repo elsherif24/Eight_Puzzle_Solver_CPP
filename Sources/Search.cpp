@@ -20,7 +20,9 @@ std::vector<std::vector<int>> treeToSteps(std::unordered_map<unsigned int, unsig
     std::reverse(steps.begin(), steps.end());
     return steps;
 }
-std::vector<std::vector<int>> treeToSteps(std::unordered_map<unsigned int, std::pair<unsigned int, size_t>> &parentMap) {
+
+std::vector<std::vector<int>>
+treeToSteps(std::unordered_map<unsigned int, std::pair<unsigned int, size_t>> &parentMap) {
     std::vector<std::vector<int>> steps;
     unsigned int key{GOAL};
     while (true) {

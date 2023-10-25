@@ -20,13 +20,16 @@
 class BFS : public Algorithm {
 public:
     void search();
-    explicit BFS(const std::vector<int>& grid);
+
+    explicit BFS(const std::vector<int> &grid);
+
 private:
     unsigned int start;
     const unsigned int GOAL{0x76543210};
     std::unordered_set<unsigned int> explored;
     std::unordered_map<unsigned int, unsigned int> parentMap;
     std::queue<std::pair<unsigned int, size_t>> frontier;
+
     bool bfs();
 };
 

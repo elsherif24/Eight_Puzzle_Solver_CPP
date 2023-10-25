@@ -17,6 +17,7 @@ TEST(ManhattanDistance, test0) {
     size_t v = x.heuristic(state);
     ASSERT_EQ(v, 0);
 }
+
 TEST(ManhattanDistance, test1) {
     std::vector<int> grid({4, 2, 8, 5, 1, 0, 6, 3, 7});
     AStarMan x = AStarMan(grid);

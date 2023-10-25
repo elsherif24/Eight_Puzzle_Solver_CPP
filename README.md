@@ -18,10 +18,10 @@ functions.
 ### How to run:
 
 1. Enter the state from the keyboard as one string without spaces, and append it with a letter from:
-    2. d, for DFS.
-    3. b for BFS.
-    4. e for A* using euclidean heuristic.
-    5. m, for A* using manhattan heuristic
+    1. d, for DFS.
+    2. b for BFS.
+    3. e for A* using euclidean heuristic.
+    4. m, for A* using manhattan heuristic
 2. Click the button `Start Search`.
 3. Use arrows `left` & `right` arrow for navigation between states.
 4. Use `backspace` to remove the current state and put another one.
@@ -85,14 +85,14 @@ Table of data structures used in the project.
 | Simple to calculate and efficient for grid-based environments.                                                                            | More computationally expensive than Manhattan distance.                                                                                           |
 | Admissible for grid-based environments( never overestimates true cost but it may do in non-grid-based environments).                      | Admissible as it gets a more accurate estimation of true cost in open spaces.                                                                     |
 
-### Practically: on average.
+### Practically: on average run of 500 permutations.
 
 |                | Manhattan Distance | Euclidean Distance |
 |----------------|--------------------|--------------------|
-| Nodes Expanded |                    |                    |
-| Cost of path   |                    |                    |
-| Search depth   |                    |                    |
-| Running time   |                    |                    |
+| Nodes Expanded | 1391.3             | 2079.17            |
+| Cost of path   | 21.6957            | 21.6957            |
+| Search depth   | 21.6957            | 21.6957            |
+| Running time   | 2.88933            | 5.41897 ms         |
 
 > Note that Manhattan Distance is more admissible.
 
@@ -117,39 +117,38 @@ classDiagram
     Algorithm <|-- BFS
     Algorithm <|-- AStarMan
     Algorithm <|-- AStarEuc
-    class DFS{
+    class DFS {
         -HashSet explored
         -Hashmap parentMap
         -Stack frontier
         -Bool dfs()
     }
-    class BFS{
+    class BFS {
         -HashSet explored
         -Hashmap parentMap
         -Queue frontier
         -Bool bfs()
     }
-    class AStarMan{
+    class AStarMan {
         -HashSet explored
         -Hashmap parentMap
         -Queue frontier
         -Bool AStarMan()
         -int manhattanDistance()
     }
-    class AStarEuc{
+    class AStarEuc {
         -HashSet explored
         -Hashmap parentMap
         -Queue frontier
         -Bool AStarMan()
         -int euclideanDistance()
     }
-    class Algorithm{
+    class Algorithm {
         +Path
         +costOfPath
         +nodesExpanded
         +searchDepth
         +runningTime
-        
         +search()*
     }
 ```
@@ -163,3 +162,4 @@ classDiagram
 * The omission of storing the eight position in the state, this led to a problem of calculating it.
     * But the usage of the addition to find its position while calculating the differences in the other positions. Led
       to the same complexity as if we stored it.
+* Used unit testing to test optimized manhattan distance functions.

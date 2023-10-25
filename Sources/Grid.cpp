@@ -5,7 +5,7 @@
 #include "../Headers/Grid.h"
 
 namespace EPU {
-    Grid::Grid(const std::vector<std::vector<int>>& grid, sf::Font &font) : font(font) {
+    Grid::Grid(const std::vector<std::vector<int>> &grid, sf::Font &font) : font(font) {
         steps = grid;
         index = 0;
         squares.resize(9);
@@ -65,10 +65,9 @@ namespace EPU {
             }
             // Center the text in the square
             sf::FloatRect textRect = numbers[i].getLocalBounds();
-            numbers[i].setOrigin(textRect.left + textRect.width/2.0f,
-                                 textRect.top  + textRect.height/2.0f);
-            numbers[i].setPosition(squares[i].getPosition().x + squares[i].getSize().x/2.0f,
-                                   squares[i].getPosition().y + squares[i].getSize().y/2.0f);
+            numbers[i].setOrigin(textRect.left + textRect.width / 2.0f, textRect.top + textRect.height / 2.0f);
+            numbers[i].setPosition(squares[i].getPosition().x + squares[i].getSize().x / 2.0f,
+                                   squares[i].getPosition().y + squares[i].getSize().y / 2.0f);
 
         }
     }

@@ -4,6 +4,7 @@
 
 #ifndef EIGHT_PUZZLE_SOLVER_ASTARMAN_H
 #define EIGHT_PUZZLE_SOLVER_ASTARMAN_H
+
 #include <vector>
 #include <queue>
 #include <utility>
@@ -19,7 +20,8 @@
 class AStarMan : public Algorithm {
 public:
     void search();
-    explicit AStarMan(const std::vector<int>& grid);
+
+    explicit AStarMan(const std::vector<int> &grid);
 
     size_t heuristic(unsigned int state) const;
 
@@ -28,9 +30,8 @@ private:
     const unsigned int GOAL{0x76543210};
     std::unordered_set<unsigned int> explored;
     std::unordered_map<unsigned int, std::pair<unsigned int, size_t>> parentMap;
-    std::priority_queue<std::pair<size_t, std::pair<unsigned int, size_t>>,
-                        std::vector<std::pair<size_t, std::pair<unsigned int, size_t>>>,
-                        std::greater<>> frontier;
+    std::priority_queue<std::pair<size_t, std::pair<unsigned int, size_t>>, std::vector<std::pair<size_t, std::pair<unsigned int, size_t>>>, std::greater<>> frontier;
+
     bool aStar();
 };
 

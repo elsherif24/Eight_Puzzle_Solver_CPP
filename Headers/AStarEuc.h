@@ -20,7 +20,9 @@
 class AStarEuc : public Algorithm {
 public:
     void search();
-    explicit AStarEuc(const std::vector<int>& grid);
+
+    explicit AStarEuc(const std::vector<int> &grid);
+
     double heuristic(unsigned int state) const;
 
 private:
@@ -28,11 +30,11 @@ private:
     const unsigned int GOAL{0x76543210};
     std::unordered_set<unsigned int> explored;
     std::unordered_map<unsigned int, std::pair<unsigned int, size_t>> parentMap;
-    std::priority_queue<std::pair<double, std::pair<unsigned int, size_t>>,
-            std::vector<std::pair<double, std::pair<unsigned int, size_t>>>,
-            std::greater<>> frontier;
+    std::priority_queue<std::pair<double, std::pair<unsigned int, size_t>>, std::vector<std::pair<double, std::pair<unsigned int, size_t>>>, std::greater<>> frontier;
+
     bool aStar();
-    static double euclideanDistance(std::pair<int, int> a, std::pair<int, int> b) ;
+
+    static double euclideanDistance(std::pair<int, int> a, std::pair<int, int> b);
 };
 
 

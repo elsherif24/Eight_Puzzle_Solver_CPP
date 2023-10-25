@@ -4,7 +4,7 @@
 
 #include "../Headers/BFS.h"
 
-BFS::BFS(const std::vector<int>& grid) {
+BFS::BFS(const std::vector<int> &grid) {
     costOfPath = 0;
     nodesExpanded = 0;
     maxDepthSearch = 0;

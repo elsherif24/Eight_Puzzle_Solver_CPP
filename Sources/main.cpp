@@ -1,3 +1,4 @@
+#include <random>
 #include <vector>
 #include <string>
 #include <SFML/Graphics.hpp>
@@ -12,9 +13,7 @@ int WinMain(HINSTANCE hThisInstance, HINSTANCE hPrevInstance, LPSTR lpszArgument
     std::vector<std::vector<int>> grid({{0, 0, 0, 0, 0, 0, 0, 0, 0}});
 
     // Create the main window
-    sf::RenderWindow window(sf::VideoMode(1280, 1024),
-                            "8 Puzzle Solver",
-                            sf::Style::Titlebar | sf::Style::Close);
+    sf::RenderWindow window(sf::VideoMode(1280, 1024), "8 Puzzle Solver", sf::Style::Titlebar | sf::Style::Close);
 
     // Load a sprite to display
     sf::Texture texture;
@@ -39,7 +38,7 @@ int WinMain(HINSTANCE hThisInstance, HINSTANCE hPrevInstance, LPSTR lpszArgument
     stateInput.setLimit(true, 10);
     stateInput.setFont(font);
 
-    EPU::RectButton searchButton(font , sf::Vector2f(150.f, 50.f), sf::Vector2f(1000, 350));
+    EPU::RectButton searchButton(font, sf::Vector2f(150.f, 50.f), sf::Vector2f(1000, 350));
     searchButton.setButtonLabel(24.f, "Start Search");
     searchButton.setButtonFont(font);
     searchButton.setButtonColor(sf::Color::White);

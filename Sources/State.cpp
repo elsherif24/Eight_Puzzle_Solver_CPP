@@ -14,8 +14,7 @@ const std::vector<std::vector<int>> data{{3, 1},
                                          {2, 8, 4},
                                          {3, 7},
                                          {4, 6, 8},
-                                         {5, 7}
-};
+                                         {5, 7}};
 
 std::vector<unsigned int> getNeighbors(const unsigned int state) {
     unsigned int zeroPosition = state & ZERO_POSITION_MASK;

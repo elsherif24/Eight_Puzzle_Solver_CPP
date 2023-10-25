@@ -20,7 +20,8 @@
 class DFS : public Algorithm {
 public:
     void search();
-    explicit DFS(const std::vector<int>& grid);
+
+    explicit DFS(const std::vector<int> &grid);
 
 private:
     unsigned int start;
@@ -28,6 +29,7 @@ private:
     std::unordered_set<unsigned int> explored;
     std::unordered_map<unsigned int, unsigned int> parentMap;
     std::stack<std::pair<unsigned int, size_t>> frontier;
+
     bool dfs();
 };
 

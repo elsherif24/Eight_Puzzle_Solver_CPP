@@ -7,7 +7,7 @@
 #include <memory>
 #include "../Headers/Solver.h"
 
-bool verifyInput(std::string& input) {
+bool verifyInput(std::string &input) {
     if (input.size() != 10) {
         return false;
     }
@@ -27,7 +27,7 @@ bool verifyInput(std::string& input) {
     return true;
 }
 
-std::unique_ptr<Algorithm> createAlgorithm(char algType, const std::vector<int>& grid, std::string& algorithmName) {
+std::unique_ptr<Algorithm> createAlgorithm(char algType, const std::vector<int> &grid, std::string &algorithmName) {
     switch (algType) {
         case 'd':
             algorithmName = "DFS";
@@ -45,7 +45,8 @@ std::unique_ptr<Algorithm> createAlgorithm(char algType, const std::vector<int>&
             throw std::invalid_argument("Invalid algorithm type");
     }
 }
-std::string generateReport(const Algorithm& algorithm, const std::string& algorithmName) {
+
+std::string generateReport(const Algorithm &algorithm, const std::string &algorithmName) {
     std::stringstream report;
     report << algorithmName << "\n";
     report << "Cost of Path: " << algorithm.costOfPath << "\n";
@@ -54,6 +55,7 @@ std::string generateReport(const Algorithm& algorithm, const std::string& algori
     report << "Running Time: " << algorithm.runningTime << " ms\n";
     return report.str();
 }
+
 void run(std::vector<std::vector<int>> &vector1, std::string basicString, sf::Text &info) {
     if (!verifyInput(basicString)) {
         info.setString("Invalid Input");
@@ -69,7 +71,7 @@ void run(std::vector<std::vector<int>> &vector1, std::string basicString, sf::Te
     try {
         algorithm = createAlgorithm(basicString.back(), grid, algorithmName);
         algorithm->search();
-    } catch (std::exception& e) {
+    } catch (std::exception &e) {
         std::stringstream report;
         report << algorithmName << "\n";
         report << e.what() << "\n";

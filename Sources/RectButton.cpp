@@ -91,14 +91,12 @@ namespace EPU {
             this->button.setSize(autoRectSize);
             this->buttonRect = this->button.getLocalBounds();
 
-            this->buttonLabel.setOrigin(this->labelRect.width / 2.0f,
-                                        this->labelRect.height / 2.0f);
+            this->buttonLabel.setOrigin(this->labelRect.width / 2.0f, this->labelRect.height / 2.0f);
 
             this->buttonLabel.setPosition(this->buttonPos.x + (this->buttonRect.width / 2.0f),
                                           this->buttonPos.y + (this->buttonRect.height / 4.0f));
         } else {
-            this->buttonLabel.setOrigin(this->labelRect.width / 2.0f,
-                                        this->labelRect.height / 2.0f);
+            this->buttonLabel.setOrigin(this->labelRect.width / 2.0f, this->labelRect.height / 2.0f);
 
             this->buttonLabel.setPosition(this->buttonPos.x + (this->buttonRect.width / 2.0f),
                                           this->buttonPos.y + (this->buttonRect.height / 4.0f));

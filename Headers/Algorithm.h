@@ -4,6 +4,7 @@
 
 #ifndef EIGHT_PUZZLE_SOLVER_ALGORITHM_H
 #define EIGHT_PUZZLE_SOLVER_ALGORITHM_H
+
 #include <vector>
 
 class Algorithm {
@@ -13,7 +14,9 @@ public:
     size_t nodesExpanded;
     size_t maxDepthSearch;
     size_t runningTime;
+
     virtual void search() = 0;
+
     virtual ~Algorithm() = default;
 };
 

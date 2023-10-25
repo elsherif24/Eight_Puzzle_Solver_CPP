@@ -18,8 +18,8 @@
 #include "../Headers/AStarMan.h"
 #include "../Headers/AStarEuc.h"
 
-void run(std::vector<std::vector<int>>& vector1, std::string basicString, sf::Text& info);
+void run(std::vector<std::vector<int>> &vector1, std::string basicString, sf::Text &info);
 
-bool verifyInput(std::string& input);
+bool verifyInput(std::string &input);
 
 #endif //EIGHT_PUZZLE_SOLVER_SOLVER_H
