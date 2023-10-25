@@ -27,15 +27,19 @@ bool verifyInput(std::string& input) {
     return true;
 }
 
-std::unique_ptr<Algorithm> createAlgorithm(char algType, const std::vector<int>& grid) {
+std::unique_ptr<Algorithm> createAlgorithm(char algType, const std::vector<int>& grid, std::string& algorithmName) {
     switch (algType) {
         case 'd':
+            algorithmName = "DFS";
             return std::make_unique<DFS>(grid);
         case 'b':
+            algorithmName = "BFS";
             return std::make_unique<BFS>(grid);
         case 'm':
+            algorithmName = "A* Manhattan";
             return std::make_unique<AStarMan>(grid);
         case 'e':
+            algorithmName = "A* Euclidean";
             return std::make_unique<AStarEuc>(grid);
         default:
             throw std::invalid_argument("Invalid algorithm type");
@@ -63,7 +67,7 @@ void run(std::vector<std::vector<int>> &vector1, std::string basicString, sf::Te
     std::unique_ptr<Algorithm> algorithm;
     std::string algorithmName;
     try {
-        algorithm = createAlgorithm(basicString.back(), grid);
+        algorithm = createAlgorithm(basicString.back(), grid, algorithmName);
         algorithm->search();
     } catch (std::exception& e) {
         std::stringstream report;
@@ -76,5 +80,6 @@ void run(std::vector<std::vector<int>> &vector1, std::string basicString, sf::Te
         return;
     }
     vector1 = algorithm->path;
+
     info.setString(generateReport(*algorithm, algorithmName));
 }

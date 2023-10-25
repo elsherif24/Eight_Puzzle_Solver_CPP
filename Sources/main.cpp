@@ -13,7 +13,7 @@ int WinMain(HINSTANCE hThisInstance, HINSTANCE hPrevInstance, LPSTR lpszArgument
 
     // Create the main window
     sf::RenderWindow window(sf::VideoMode(1280, 1024),
-                            "SFML window",
+                            "8 Puzzle Solver",
                             sf::Style::Titlebar | sf::Style::Close);
 
     // Load a sprite to display
