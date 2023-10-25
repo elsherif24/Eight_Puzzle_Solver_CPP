@@ -1,13 +1,14 @@
 #include <vector>
 #include <string>
 #include <SFML/Graphics.hpp>
+#include <minwindef.h>
 #include "../Headers/Grid.h"
 #include "../Headers/Textbox.h"
 #include "../Headers/RectButton.h"
 #include "../Headers/Solver.h"
 
 
-int main() {
+int WinMain(HINSTANCE hThisInstance, HINSTANCE hPrevInstance, LPSTR lpszArgument, int nCmdShow) {
     std::vector<std::vector<int>> grid({{0, 0, 0, 0, 0, 0, 0, 0, 0}});
 
     // Create the main window
