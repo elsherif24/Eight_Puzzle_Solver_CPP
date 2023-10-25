@@ -14,6 +14,8 @@ functions.
 | 6 | 7 | 8 |
 
 ## Demo:
+https://github.com/el-sharif-mohamed22/Eight_Puzzle_Solver_C/assets/95565086/9d424c75-5bcb-4349-8cf3-44c89b551126
+
 
 ### How to run:
 
@@ -149,6 +151,7 @@ classDiagram
         +nodesExpanded
         +searchDepth
         +runningTime
+        
         +search()*
     }
 ```
