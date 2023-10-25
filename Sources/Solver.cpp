@@ -4,6 +4,7 @@
 
 
 
+#include <memory>
 #include "../Headers/Solver.h"
 
 bool verifyInput(std::string& input) {
@@ -26,6 +27,29 @@ bool verifyInput(std::string& input) {
     return true;
 }
 
+std::unique_ptr<Algorithm> createAlgorithm(char algType, const std::vector<int>& grid) {
+    switch (algType) {
+        case 'd':
+            return std::make_unique<DFS>(grid);
+        case 'b':
+            return std::make_unique<BFS>(grid);
+        case 'm':
+            return std::make_unique<AStarMan>(grid);
+        case 'e':
+            return std::make_unique<AStarEuc>(grid);
+        default:
+            throw std::invalid_argument("Invalid algorithm type");
+    }
+}
+std::string generateReport(const Algorithm& algorithm, const std::string& algorithmName) {
+    std::stringstream report;
+    report << algorithmName << "\n";
+    report << "Cost of Path: " << algorithm.costOfPath << "\n";
+    report << "Nodes Expanded: " << algorithm.nodesExpanded << "\n";
+    report << "Max Depth Search: " << algorithm.maxDepthSearch << "\n";
+    report << "Running Time: " << algorithm.runningTime << " ms\n";
+    return report.str();
+}
 void run(std::vector<std::vector<int>> &vector1, std::string basicString, sf::Text &info) {
     if (!verifyInput(basicString)) {
         info.setString("Invalid Input");
@@ -36,70 +60,21 @@ void run(std::vector<std::vector<int>> &vector1, std::string basicString, sf::Te
         grid[i] = basicString[i] - '0';
     }
     // run the algorithm
-    if (basicString.back() == 'd') {
-        DFS dfs = DFS(grid);
-        try {
-            dfs.search();
-        } catch (std::exception& e) {
-            info.setString(e.what());
-            return;
-        }
-        vector1 = dfs.path;
+    std::unique_ptr<Algorithm> algorithm;
+    std::string algorithmName;
+    try {
+        algorithm = createAlgorithm(basicString.back(), grid);
+        algorithm->search();
+    } catch (std::exception& e) {
         std::stringstream report;
-        report << "DFS\n";
-        report << "Cost of Path: " << dfs.costOfPath << "\n";
-        report << "Nodes Expanded: " << dfs.nodesExpanded << "\n";
-        report << "Max Depth Search: " << dfs.maxDepthSearch << "\n";
-        report << "Running Time: " << dfs.runningTime << " ms\n";
+        report << algorithmName << "\n";
+        report << e.what() << "\n";
+        report << "Nodes Expanded: " << algorithm->nodesExpanded << "\n";
+        report << "Max Depth Search: " << algorithm->maxDepthSearch << "\n";
+        report << "Running Time: " << algorithm->runningTime << " ms\n";
         info.setString(report.str());
-    } else if (basicString.back() == 'b') {
-        BFS bfs = BFS(grid);
-        try {
-            bfs.search();
-        } catch (std::exception& e) {
-            info.setString(e.what());
-            return;
-        }
-        vector1 = bfs.path;
-        std::stringstream report;
-        report << "BFS\n";
-        report << "Cost of Path: " << bfs.costOfPath << "\n";
-        report << "Nodes Expanded: " << bfs.nodesExpanded << "\n";
-        report << "Max Depth Search: " << bfs.maxDepthSearch << "\n";
-        report << "Running Time: " << bfs.runningTime << " ms\n";
-        info.setString(report.str());
-    } else if (basicString.back() == 'm') {
-        AStarMan aStarMan = AStarMan(grid);
-        try {
-            aStarMan.search();
-        } catch (std::exception& e) {
-            info.setString(e.what());
-            return;
-        }
-        vector1 = aStarMan.path;
-        std::stringstream report;
-        report << "A* with Manhattan Distance\n";
-        report << "Cost of Path: " << aStarMan.costOfPath << "\n";
-        report << "Nodes Expanded: " << aStarMan.nodesExpanded << "\n";
-        report << "Max Depth Search: " << aStarMan.maxDepthSearch << "\n";
-        report << "Running Time: " << aStarMan.runningTime << " ms\n";
-        info.setString(report.str());
-    } else if (basicString.back() == 'e') {
-        AStarEuc aStarEuc = AStarEuc(grid);
-        try {
-            aStarEuc.search();
-        } catch (std::exception& e) {
-            info.setString(e.what());
-            return;
-        }
-        vector1 = aStarEuc.path;
-        std::stringstream report;
-        report << "A* with Euclidean Distance\n";
-        report << "Cost of Path: " << aStarEuc.costOfPath << "\n";
-        report << "Nodes Expanded: " << aStarEuc.nodesExpanded << "\n";
-        report << "Max Depth Search: " << aStarEuc.maxDepthSearch << "\n";
-        report << "Running Time: " << aStarEuc.runningTime << " ms\n";
-        info.setString(report.str());
+        return;
     }
-    
+    vector1 = algorithm->path;
+    info.setString(generateReport(*algorithm, algorithmName));
 }

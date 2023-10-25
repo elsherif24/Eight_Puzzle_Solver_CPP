@@ -42,14 +42,14 @@ void BFS::search() {
 
     auto startTime = std::chrono::high_resolution_clock::now();
     bool success{bfs()};
-    if (!success) {
-        throw std::invalid_argument("No solution exist for this state.\n");
-    }
     auto stopTime = std::chrono::high_resolution_clock::now();
     auto duration = std::chrono::duration_cast<std::chrono::milliseconds>(stopTime - startTime);
     runningTime = duration.count();
+    nodesExpanded = explored.size();
+    if (!success) {
+        throw std::invalid_argument("No solution exist for this state.\n");
+    }
     path = treeToSteps(parentMap);
     costOfPath = path.size() - 1;
-    nodesExpanded = explored.size();
 }
 

@@ -15,14 +15,10 @@
 #include <algorithm>
 #include "../Headers/State.h"
 #include "../Headers/Search.h"
+#include "Algorithm.h"
 
-class AStarEuc {
+class AStarEuc : public Algorithm {
 public:
-    std::vector<std::vector<int>> path;
-    size_t costOfPath;
-    size_t nodesExpanded;
-    size_t maxDepthSearch;
-    size_t runningTime;
     void search();
     explicit AStarEuc(const std::vector<int>& grid);
     double heuristic(unsigned int state) const;

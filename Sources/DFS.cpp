@@ -27,6 +27,8 @@ bool DFS::dfs() {
         }
         explored.insert(state);
         std::vector<unsigned int> neighbors(getNeighbors(state));
+        // suffle the neighbors to get different order of expansion
+        std::reverse(neighbors.begin(), neighbors.end());
         for (const unsigned int &neighbor: neighbors) {
             if (!explored.count(neighbor) && !parentMap.count(neighbor)) {
                 frontier.emplace(neighbor, depth + 1);

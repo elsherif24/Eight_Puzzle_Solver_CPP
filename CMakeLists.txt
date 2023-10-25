@@ -33,6 +33,7 @@ add_executable(Eight_Puzzle_Solver "Sources/main.cpp"
         Headers/RectButton.h
         Sources/Solver.cpp
         Headers/Solver.h
+        Headers/Algorithm.h
 )
 
 target_link_libraries(Eight_Puzzle_Solver sfml-graphics sfml-window sfml-system)

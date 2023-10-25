@@ -15,13 +15,10 @@
 #include <algorithm>
 #include "../Headers/State.h"
 #include "../Headers/Search.h"
-class BFS {
+#include "Algorithm.h"
+
+class BFS : public Algorithm {
 public:
-    std::vector<std::vector<int>> path;
-    size_t costOfPath;
-    size_t nodesExpanded;
-    size_t maxDepthSearch;
-    size_t runningTime;
     void search();
     explicit BFS(const std::vector<int>& grid);
 private:
