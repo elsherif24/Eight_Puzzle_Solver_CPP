@@ -19,7 +19,7 @@
 
 class AStarMan : public Algorithm {
 public:
-    void search();
+    void search() override;
 
     explicit AStarMan(const std::vector<int> &grid);
 

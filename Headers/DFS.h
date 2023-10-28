@@ -19,7 +19,7 @@
 
 class DFS : public Algorithm {
 public:
-    void search();
+    void search() override;
 
     explicit DFS(const std::vector<int> &grid);
 

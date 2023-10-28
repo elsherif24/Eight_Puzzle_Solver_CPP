@@ -14,8 +14,8 @@ functions.
 | 6 | 7 | 8 |
 
 ## Demo:
-https://github.com/el-sharif-mohamed22/Eight_Puzzle_Solver_C/assets/95565086/9d424c75-5bcb-4349-8cf3-44c89b551126
 
+https://github.com/el-sharif-mohamed22/Eight_Puzzle_Solver_C/assets/95565086/9d424c75-5bcb-4349-8cf3-44c89b551126
 
 ### How to run:
 
@@ -151,7 +151,6 @@ classDiagram
         +nodesExpanded
         +searchDepth
         +runningTime
-        
         +search()*
     }
 ```
@@ -166,3 +165,10 @@ classDiagram
     * But the usage of the addition to find its position while calculating the differences in the other positions. Led
       to the same complexity as if we stored it.
 * Used unit testing to test optimized manhattan distance functions.
+
+## Sample Runs:
+
+| State            | DFS       | BFS       | A* Euclidean | A* Manhattan |
+|------------------|-----------|-----------|--------------|--------------|
+| No Solution      | DFS       | BFS       | A* Manhattan | A* Euclidean |
+| DFS inefficiency | 012345678 | 012345678 | 012345678    | 012345678    |

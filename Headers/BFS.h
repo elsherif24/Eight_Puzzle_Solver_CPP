@@ -19,7 +19,7 @@
 
 class BFS : public Algorithm {
 public:
-    void search();
+    void search() override;
 
     explicit BFS(const std::vector<int> &grid);
 

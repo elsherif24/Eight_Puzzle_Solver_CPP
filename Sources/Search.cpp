@@ -2,6 +2,7 @@
 // Created by Al-Sh on 10/22/2023.
 //
 
+#include <map>
 #include "../Headers/Search.h"
 
 const unsigned int GOAL = 0x76543210;
