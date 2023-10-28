@@ -168,34 +168,12 @@ classDiagram
 
 ## Sample Runs:
 
-| State            | DFS       | BFS       | A* Euclidean | A* Manhattan |
-|------------------|-----------|-----------|--------------|--------------|
-| No Solution      |  ![no_sol (1)](https://github.com/el-sharif-mohamed22/Eight_Puzzle_Solver_C/assets/95565086/5721df8b-4cdf-41a8-b2a4-c163eac0d870)
-      |   ![no_sol (2)](https://github.com/el-sharif-mohamed22/Eight_Puzzle_Solver_C/assets/95565086/789af347-82c1-4017-a042-eb8ba5144eb0)
-     | ![no_sol (3)](https://github.com/el-sharif-mohamed22/Eight_Puzzle_Solver_C/assets/95565086/18721a9e-efdb-44bd-a77b-ee89e6d7c6d1)
- | ![no_sol (4)](https://github.com/el-sharif-mohamed22/Eight_Puzzle_Solver_C/assets/95565086/6e2769d9-7348-40d0-a989-cf7e9d16367b)
- |
-| DFS inefficiency |![dfs_ineff (1)](https://github.com/el-sharif-mohamed22/Eight_Puzzle_Solver_C/assets/95565086/d54308d7-4a54-40f8-9792-0a11dd8d3b21)
-  | ![dfs_ineff (2)](https://github.com/el-sharif-mohamed22/Eight_Puzzle_Solver_C/assets/95565086/c1ee071a-83d3-48ab-8213-53b92af5b0e9)
- | ![dfs_ineff (3)](https://github.com/el-sharif-mohamed22/Eight_Puzzle_Solver_C/assets/95565086/a7fa50ac-333a-4182-bb9b-47429ce6eb34)
- | ![dfs_ineff (4)](https://github.com/el-sharif-mohamed22/Eight_Puzzle_Solver_C/assets/95565086/c421a4f1-1b98-4c5c-a57d-e571d8d599ec)
- |
-| Start | ![start (1)](https://github.com/el-sharif-mohamed22/Eight_Puzzle_Solver_C/assets/95565086/4f7fa296-35d4-4b93-9e76-9cd6a1bf4d3c)
- | ![start (2)](https://github.com/el-sharif-mohamed22/Eight_Puzzle_Solver_C/assets/95565086/dfbe824b-bde9-4454-9555-aa4e3fa6467f)
- | ![start (3)](https://github.com/el-sharif-mohamed22/Eight_Puzzle_Solver_C/assets/95565086/0fc5f890-e353-4860-9254-b805e1b08278)
- | ![start (4)](https://github.com/el-sharif-mohamed22/Eight_Puzzle_Solver_C/assets/95565086/543f5452-d424-4d32-87bb-c76f98cc252d)
- |
-| DFS Best | ![dfs_best (1)](https://github.com/el-sharif-mohamed22/Eight_Puzzle_Solver_C/assets/95565086/868c049e-2238-4b44-9db3-73bad9169cbf)
- | ![dfs_best (2)](https://github.com/el-sharif-mohamed22/Eight_Puzzle_Solver_C/assets/95565086/99b004a4-33ec-47f5-9981-61e61de38e85)
-  | ![dfs_best (3)](https://github.com/el-sharif-mohamed22/Eight_Puzzle_Solver_C/assets/95565086/831bf181-142c-46f1-9e10-ec8496908d33)
- | ![dfs_best (4)](https://github.com/el-sharif-mohamed22/Eight_Puzzle_Solver_C/assets/95565086/9001e635-8702-4b7b-ac42-3c75966fef50)
-| Cost 28 | ![cost_28_1 (1)](https://github.com/el-sharif-mohamed22/Eight_Puzzle_Solver_C/assets/95565086/7993e3fb-ed2b-4b99-a7e3-cede622ead84)
- | ![cost_28_1 (2)](https://github.com/el-sharif-mohamed22/Eight_Puzzle_Solver_C/assets/95565086/ba3d2d2a-86a7-4a9d-ab12-ccc9a27805b1)
- | ![cost_28_1 (3)](https://github.com/el-sharif-mohamed22/Eight_Puzzle_Solver_C/assets/95565086/049bafb6-3868-4e2a-acfa-64da028673f2)
- | ![cost_28_1 (4)](https://github.com/el-sharif-mohamed22/Eight_Puzzle_Solver_C/assets/95565086/88528646-a93c-412a-953a-92700d6c1f61)
-  |
-| Cost 28 | ![cost_28_2 (1)](https://github.com/el-sharif-mohamed22/Eight_Puzzle_Solver_C/assets/95565086/c5933b5f-7220-4b4f-805e-846f51b78db6)
- | ![cost_28_2 (2)](https://github.com/el-sharif-mohamed22/Eight_Puzzle_Solver_C/assets/95565086/2e1319d7-143a-41bf-be76-6818f9666a84)
- | ![cost_28_2 (3)](https://github.com/el-sharif-mohamed22/Eight_Puzzle_Solver_C/assets/95565086/46a66c76-2140-414f-a89b-799b32aa77eb)
- | ![cost_28_2 (4)](https://github.com/el-sharif-mohamed22/Eight_Puzzle_Solver_C/assets/95565086/872a2c00-45c9-4c3a-817b-30909faa1087)
- |
+| State            | DFS                                                                                                                                 | BFS                                                                                                                                 | A* Euclidean                                                                                                                        | A* Manhattan                                                                                                                        |
+|------------------|-------------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------|
+| No Solution      | ![no_sol (1)](https://github.com/el-sharif-mohamed22/Eight_Puzzle_Solver_C/assets/95565086/5721df8b-4cdf-41a8-b2a4-c163eac0d870)    | ![no_sol (2)](https://github.com/el-sharif-mohamed22/Eight_Puzzle_Solver_C/assets/95565086/789af347-82c1-4017-a042-eb8ba5144eb0)    | ![no_sol (3)](https://github.com/el-sharif-mohamed22/Eight_Puzzle_Solver_C/assets/95565086/18721a9e-efdb-44bd-a77b-ee89e6d7c6d1)    | ![no_sol (4)](https://github.com/el-sharif-mohamed22/Eight_Puzzle_Solver_C/assets/95565086/6e2769d9-7348-40d0-a989-cf7e9d16367b)    |
+| DFS inefficiency | ![dfs_ineff (1)](https://github.com/el-sharif-mohamed22/Eight_Puzzle_Solver_C/assets/95565086/d54308d7-4a54-40f8-9792-0a11dd8d3b21) | ![dfs_ineff (2)](https://github.com/el-sharif-mohamed22/Eight_Puzzle_Solver_C/assets/95565086/c1ee071a-83d3-48ab-8213-53b92af5b0e9) | ![dfs_ineff (3)](https://github.com/el-sharif-mohamed22/Eight_Puzzle_Solver_C/assets/95565086/a7fa50ac-333a-4182-bb9b-47429ce6eb34) | ![dfs_ineff (4)](https://github.com/el-sharif-mohamed22/Eight_Puzzle_Solver_C/assets/95565086/c421a4f1-1b98-4c5c-a57d-e571d8d599ec) |
+| Start            | ![start (1)](https://github.com/el-sharif-mohamed22/Eight_Puzzle_Solver_C/assets/95565086/4f7fa296-35d4-4b93-9e76-9cd6a1bf4d3c)     | ![start (2)](https://github.com/el-sharif-mohamed22/Eight_Puzzle_Solver_C/assets/95565086/dfbe824b-bde9-4454-9555-aa4e3fa6467f)     | ![start (3)](https://github.com/el-sharif-mohamed22/Eight_Puzzle_Solver_C/assets/95565086/0fc5f890-e353-4860-9254-b805e1b08278)     | ![start (4)](https://github.com/el-sharif-mohamed22/Eight_Puzzle_Solver_C/assets/95565086/543f5452-d424-4d32-87bb-c76f98cc252d)     |
+| DFS Best         | ![dfs_best (1)](https://github.com/el-sharif-mohamed22/Eight_Puzzle_Solver_C/assets/95565086/868c049e-2238-4b44-9db3-73bad9169cbf)  | ![dfs_best (2)](https://github.com/el-sharif-mohamed22/Eight_Puzzle_Solver_C/assets/95565086/99b004a4-33ec-47f5-9981-61e61de38e85)  | ![dfs_best (3)](https://github.com/el-sharif-mohamed22/Eight_Puzzle_Solver_C/assets/95565086/831bf181-142c-46f1-9e10-ec8496908d33)  | ![dfs_best (4)](https://github.com/el-sharif-mohamed22/Eight_Puzzle_Solver_C/assets/95565086/9001e635-8702-4b7b-ac42-3c75966fef50)  |
+| Cost 28          | ![cost_28_1 (1)](https://github.com/el-sharif-mohamed22/Eight_Puzzle_Solver_C/assets/95565086/7993e3fb-ed2b-4b99-a7e3-cede622ead84) | ![cost_28_1 (2)](https://github.com/el-sharif-mohamed22/Eight_Puzzle_Solver_C/assets/95565086/ba3d2d2a-86a7-4a9d-ab12-ccc9a27805b1) | ![cost_28_1 (3)](https://github.com/el-sharif-mohamed22/Eight_Puzzle_Solver_C/assets/95565086/049bafb6-3868-4e2a-acfa-64da028673f2) | ![cost_28_1 (4)](https://github.com/el-sharif-mohamed22/Eight_Puzzle_Solver_C/assets/95565086/88528646-a93c-412a-953a-92700d6c1f61) |
+| Cost 28          | ![cost_28_2 (1)](https://github.com/el-sharif-mohamed22/Eight_Puzzle_Solver_C/assets/95565086/c5933b5f-7220-4b4f-805e-846f51b78db6) | ![cost_28_2 (2)](https://github.com/el-sharif-mohamed22/Eight_Puzzle_Solver_C/assets/95565086/2e1319d7-143a-41bf-be76-6818f9666a84) | ![cost_28_2 (3)](https://github.com/el-sharif-mohamed22/Eight_Puzzle_Solver_C/assets/95565086/46a66c76-2140-414f-a89b-799b32aa77eb) | ![cost_28_2 (4)](https://github.com/el-sharif-mohamed22/Eight_Puzzle_Solver_C/assets/95565086/872a2c00-45c9-4c3a-817b-30909faa1087) |
+| invalid          |                                                                                                                                     |                                                                                                                                     |                                                                                                                                     |                                                                                                                                     |
