@@ -15,5 +15,6 @@ std::vector<std::vector<int>> treeToSteps(std::unordered_map<unsigned int, unsig
 
 std::vector<std::vector<int>> treeToSteps(std::unordered_map<unsigned int, std::pair<unsigned int, size_t>> &parentMap);
 
+unsigned int reverseBFS();
 
 #endif //EIGHT_PUZZLE_SOLVER_SEARCH_H

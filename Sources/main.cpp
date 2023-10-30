@@ -8,10 +8,6 @@
 #include "../Headers/Solver.h"
 #include "../Headers/Textbox.h"
 #include <minwindef.h>
-#include <ext/pb_ds/assoc_container.hpp>
-using namespace __gnu_pbds;
-cc_hash_table<int, int> table;
-
 
 int WinMain(HINSTANCE hThisInstance, HINSTANCE hPrevInstance, LPSTR lpszArgument, int nCmdShow) {
     std::vector<std::vector<int>> grid({{0, 0, 0, 0, 0, 0, 0, 0, 0}});
